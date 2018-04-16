@@ -28,7 +28,7 @@ public class GalleryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
 
-        photoRecyclerView = findViewById(R.id.photo_gallery_recycler_view);
+        photoRecyclerView = (RecyclerView) findViewById(R.id.photo_gallery_recycler_view);
         photoRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));          // задал layout, 3 - кол-во столбцов;
         new FetchItemTask().execute();                                                               // Работа в фоне (метод FetchItemTask();
         setupAdapter();
@@ -43,7 +43,7 @@ public class GalleryActivity extends AppCompatActivity {
 
         public PhotoHolder(View itemView) {
             super(itemView);
-            itemImageView = itemView.findViewById(R.id.photo_gallery_recycler_view);
+            itemImageView = itemView.findViewById(R.id.photo_gallery_image_view);
         }
     }
 
